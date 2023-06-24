@@ -17,6 +17,8 @@ class _TugasDIalogState extends State<TugasDIalog> {
       body: Container(
         padding: const EdgeInsets.all(10),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(
                 onPressed: () async {
@@ -45,7 +47,38 @@ class _TugasDIalogState extends State<TugasDIalog> {
                         );
                       });
                 },
-                child: const Text("Open Dialog"))
+                child: const Text("Open Dialog")),
+            ElevatedButton(
+                onPressed: () async {
+                  await showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Text("You order was placed"),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor: Colors.blue),
+                                    child: const Text("Ok"),
+                                  )
+                                ]),
+                          ),
+                        );
+                      });
+                },
+                child: const Text("Open BottomSheet"))
           ],
         ),
       ),

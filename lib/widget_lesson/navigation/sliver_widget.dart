@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter_pertama/tugas/tugas_dialog.dart';
 
+import '../../tugas/tugas_basic_widget.dart';
+
 class SliverWidget extends StatefulWidget {
   const SliverWidget({Key? key}) : super(key: key);
 
@@ -9,9 +11,9 @@ class SliverWidget extends StatefulWidget {
 }
 
 class _SliverWidgetState extends State<SliverWidget> {
-  List<String> title = ["Dialog Widget"];
+  List<String> title = ["Dialog Widget", "Basic Widget"];
 
-  List<Widget> route = [const TugasDIalog()];
+  List<Widget> route = [const TugasDIalog(), const TugasBasicWidget()];
   bool pinned = true;
   bool snap = false;
   bool floating = false;
